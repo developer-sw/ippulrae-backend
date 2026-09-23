@@ -28,7 +28,7 @@
 <sub>Rule-Based 활용 점수 계산 + OpenAI 자연어 설명</sub>
     </td>
     <td align="center" width="50%">
-      <img src="./docs/images/item-analysis-processing.png" width="300"/>
+      <img src="./docs/images/item-analysis-processing.png" width="280"/>
       <br/>
       <b>AI 기반 아이템 등록</b>
 <br/>
@@ -38,14 +38,14 @@
 
   <tr>
     <td align="center" width="50%">
-      <img src="./docs/images/style-plan-result.png" width="300"/>
+      <img src="./docs/images/style-plan-result.png" width="280"/>
       <br/>
       <b>스마트 착용 추천</b>
 <br/>
 <sub>보유 아이템·상황 기반 STYLE_PLAN 생성</sub>
     </td>
     <td align="center" width="50%">
-      <img src="./docs/images/care-guide.png" width="300"/>
+      <img src="./docs/images/care-guide.png" width="280"/>
       <br/>
       <b>맞춤 관리 가이드</b>
 <br/>
