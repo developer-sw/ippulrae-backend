@@ -16,45 +16,89 @@
 
 ## Demo
 
-실제 서비스 화면은 최종 시연 자료에서 추출한 화면을 기준으로 정리합니다.
-
-<!--
-실제 서비스 화면 이미지 업로드 후 아래 주석을 해제합니다.
+실제 배포 서비스에서 동작한 주요 기능 화면입니다.
 
 <table>
   <tr>
-    <td align="center"><img src="./docs/images/purchase-utility.jpg" width="230"/><br/><b>구매 전 활용성 분석</b></td>
-    <td align="center"><img src="./docs/images/item-analysis.jpg" width="230"/><br/><b>AI 아이템 등록</b></td>
-    <td align="center"><img src="./docs/images/style-plan.jpg" width="230"/><br/><b>상황별 스타일 플랜</b></td>
-    <td align="center"><img src="./docs/images/care-guide.jpg" width="230"/><br/><b>맞춤 관리 가이드</b></td>
+    <td align="center" width="50%">
+      <img src="./docs/images/purchase-utility-report.png" width="300"/>
+      <br/>
+      <b>구매 전 활용 가능성 분석</b>
+      <br/>
+      <sub>
+        취향 적합도 · 보유 아이템 궁합 · 계절 활용도 · 카테고리 조합성을
+        Rule-Based로 계산하고, OpenAI가 결과를 자연어로 설명합니다.
+      </sub>
+    </td>
+    <td align="center" width="50%">
+      <img src="./docs/images/item-analysis-processing.png" width="300"/>
+      <br/>
+      <b>AI 기반 아이템 등록</b>
+      <br/>
+      <sub>
+        업로드한 제품 이미지를 비동기 AI Job으로 분석해
+        브랜드 · 카테고리 · 색상 · 소재 등의 등록 정보를 제안합니다.
+      </sub>
+    </td>
+  </tr>
+
+  <tr>
+    <td align="center" width="50%">
+      <img src="./docs/images/style-plan-result.png" width="300"/>
+      <br/>
+      <b>스마트 착용 추천</b>
+      <br/>
+      <sub>
+        사용자의 보유 아이템과 상황 정보를 바탕으로
+        STYLE_PLAN을 생성하고 MCM 추천 제품과 함께 제공합니다.
+      </sub>
+    </td>
+    <td align="center" width="50%">
+      <img src="./docs/images/care-guide.png" width="300"/>
+      <br/>
+      <b>맞춤 관리 가이드</b>
+      <br/>
+      <sub>
+        보유 아이템의 소재와 구매 정보를 기반으로
+        관리 주기 · 보관 방법 · 관리 일정을 제공합니다.
+      </sub>
+    </td>
   </tr>
 </table>
--->
 
----
-
-## Project Overview
-
-기존 패션 추천 서비스가 주로 **“무엇을 살 것인가?”**에 집중한다면,  
-`입을래?`는 **“이 제품을 산 뒤 실제로 얼마나 잘 활용할 수 있는가?”**까지 연결하는 것을 목표로 했습니다.
-
-핵심 흐름:
+### Backend Flow
 
 ```text
-취향 Profile
-  ↓
-MCM 제품 추천
-  ↓
-구매 전 활용 가능성 분석
-  ↓
-보유 Item 등록 + ITEM_ANALYSIS
-  ↓
-상황별 STYLE_PLAN
-  ↓
-장소 추천
-  ↓
-Product Passport / Care
+Image Upload
+    ↓
+ImageAsset / Cloudinary
+    ↓
+ITEM_ANALYSIS AI Job
+    ↓
+UserItem
+
+Preference + UserItem
+    ↓
+Purchase Utility Rule Engine
+    ↓
+OpenAI Explanation
+
+UserItem + Situation
+    ↓
+STYLE_PLAN AI Job
+    ↓
+Style Recommendation
+
+UserItem
+    ↓
+Care Policy
+    ↓
+Care Guide / Calendar / Reminder
 ```
+
+> Demo 화면은 실제 배포 서비스에서 캡처한 화면입니다.  
+> 각 기능의 Backend 구현 내용은 아래의 `My Contribution`과  
+> `Technical Challenge` 섹션에서 확인할 수 있습니다.
 
 ---
 
