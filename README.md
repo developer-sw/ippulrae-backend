@@ -21,24 +21,18 @@
 <table>
   <tr>
     <td align="center" width="50%">
-      <img src="./docs/images/purchase-utility-report.png" width="300"/>
+      <img src="./docs/images/purchase-utility-report.png" width="280"/>
       <br/>
       <b>구매 전 활용 가능성 분석</b>
-      <br/>
-      <sub>
-        취향 적합도 · 보유 아이템 궁합 · 계절 활용도 · 카테고리 조합성을
-        Rule-Based로 계산하고, OpenAI가 결과를 자연어로 설명합니다.
-      </sub>
+<br/>
+<sub>Rule-Based 활용 점수 계산 + OpenAI 자연어 설명</sub>
     </td>
     <td align="center" width="50%">
       <img src="./docs/images/item-analysis-processing.png" width="300"/>
       <br/>
       <b>AI 기반 아이템 등록</b>
-      <br/>
-      <sub>
-        업로드한 제품 이미지를 비동기 AI Job으로 분석해
-        브랜드 · 카테고리 · 색상 · 소재 등의 등록 정보를 제안합니다.
-      </sub>
+<br/>
+<sub>이미지 분석을 공통 비동기 AI Job으로 처리</sub>
     </td>
   </tr>
 
@@ -47,21 +41,15 @@
       <img src="./docs/images/style-plan-result.png" width="300"/>
       <br/>
       <b>스마트 착용 추천</b>
-      <br/>
-      <sub>
-        사용자의 보유 아이템과 상황 정보를 바탕으로
-        STYLE_PLAN을 생성하고 MCM 추천 제품과 함께 제공합니다.
-      </sub>
+<br/>
+<sub>보유 아이템·상황 기반 STYLE_PLAN 생성</sub>
     </td>
     <td align="center" width="50%">
       <img src="./docs/images/care-guide.png" width="300"/>
       <br/>
       <b>맞춤 관리 가이드</b>
-      <br/>
-      <sub>
-        보유 아이템의 소재와 구매 정보를 기반으로
-        관리 주기 · 보관 방법 · 관리 일정을 제공합니다.
-      </sub>
+<br/>
+<sub>소재 기반 관리 주기·보관법·알림 제공</sub>
     </td>
   </tr>
 </table>
